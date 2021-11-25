@@ -3,6 +3,7 @@ package com.example.cloudgooglelogin;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,7 @@ import com.google.android.gms.tasks.Task;
 public class Second_Activity2 extends AppCompatActivity {
     ImageView imgHinh;
     TextView txtEmail,txtName,txtId;
-    Button btnLogout;
+    Button btnLogout,btnMap;
     GoogleSignInClient mGoogleSignInClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,17 @@ public class Second_Activity2 extends AppCompatActivity {
         txtEmail=findViewById(R.id.txtEmail);
         txtName=findViewById(R.id.txtName);
         txtId=findViewById(R.id.txtId);
+
+        btnMap=findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Second_Activity2.this,GoogleMapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         btnLogout=findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
